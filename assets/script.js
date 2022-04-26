@@ -1,11 +1,9 @@
-var wordBlank = document.querySelector(".word-blanks");
+
 var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 
-var chosenWord = "";
-var numBlanks = 0;
 var winCounter = 0;
 var loseCounter = 0;
 var isWin = false;
@@ -13,11 +11,10 @@ var timer;
 var timerCount;
 
 // Arrays used to create blanks and letters on screen
-var lettersInChosenWord = [];
-var blanksLetters = [];
+
 
 // Array of words the user will guess
-var words = ["variable","array", "modulus", "object", "function", "string", "boolean"];
+var answers = 
 
 // The init function is called when the page loads 
 function init() {
@@ -28,10 +25,9 @@ function init() {
 // The startGame function is called when the start button is clicked
 function startGame() {
   isWin = false;
-  timerCount = 10;
+  timerCount = 60;
   // Prevents start button from being clicked when round is in progress
   startButton.disabled = true;
-  renderBlanks()
   startTimer()
 }
 
@@ -190,25 +186,3 @@ function resetGame() {
 resetButton.addEventListener("click", resetGame);
 
 // 
-var wordOptions = ["array", "object", "function", "string", "boolean"];
-
-function splicer(){
-  // splits array into single string
-singleWord = wordOptions.split(' ');
-console.log(singleWord);
-// splits string into single characters
-chars = singleWord.split('');
-console.log(chars)
-}
-
-
-
-
-
-console.log(chars[8]);
-// expected output: "k"
-
-var wordOptionsCopy = str.split();
-console.log(wordOptionsCopy);
-
-return Math.floor(Math.random() * length);
