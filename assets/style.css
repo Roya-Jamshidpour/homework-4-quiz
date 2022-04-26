@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  font-style: none;
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -39,17 +42,19 @@ button {
   margin-top: 0.6em;
 }
 
-header {
-  padding: 40px;
-  text-align: center;
+.header {
+  padding: 10px;
+  display: inline-block;
+
   color: black;
   border-bottom:30px #879274;
+  font-size: 1em;
 }
 
 main {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
 }
 
 section {
@@ -92,7 +97,9 @@ section {
 }
 
 .timer-text {
-  padding: 55px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1183px) {

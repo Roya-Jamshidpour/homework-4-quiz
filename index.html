@@ -1,18 +1,27 @@
       <!DOCTYPE html>
     <html>
       <head>
-        <title>CSS Box Styling</title>
+        <title>Coding Quiz App</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="./assets/style.css" />
       </head>
       <body>
         <header>
-          <div class= "large-font">Coding Quiz</div>
-          <button class="start-button">Start</button>
+            <div class = "timer-text">
+                <ul class="header">
+                    <li><a href="high-scores-page">HighScores</a></li>
+                    <li class="timer-count">60</li>
+                    <li>Time</li>
+                </ul>
+               </div>
+                
+                
         </header>
-    
+
         <main>
+            <div class= "large-font">Coding Quiz</div>
+          <button class="start-button">Start</button>
           <section>
             <div class="card word-guess">
               <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
@@ -31,7 +40,7 @@
               <div class= "card timer">
                 <div class = "timer-text">
                 <div class="large-font timer-count">60</div>
-                <h3>seconds remaining</h3>
+                <div>seconds remaining</div>
               </div>
             
               </div>
