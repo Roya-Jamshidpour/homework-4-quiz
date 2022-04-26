@@ -3,6 +3,8 @@
   font-style: none;
   list-style: none;
   text-decoration: none;
+  color: black;
+  
 }
 
 body {
@@ -11,7 +13,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
+}
+
+.questions {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+
 }
 
 .reset-button {
@@ -29,6 +37,8 @@ body {
 
 button {
   background-color: #13293d;
+  display: flex;
+  justify-content: center;
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -45,10 +55,10 @@ button {
 header {
   padding: 10px;
   display: inline-block;
-
   color: black;
   border-bottom:30px #879274;
   font-size: 1em;
+  text-align: center;
 }
 
 main {
@@ -93,13 +103,14 @@ section {
 
 .timer {
   color:black;
-  text-align: center;
 }
 
 .timer-text {
-  padding: 10px;
+  color: black;
   display: flex;
   justify-content: space-between;
+  
+  
 }
 
 @media screen and (max-width: 1183px) {
