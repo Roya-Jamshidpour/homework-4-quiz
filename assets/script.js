@@ -44,16 +44,24 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionButtonsElement.innerText = question.question
+    questionElement.innerText = question.question
+    question.answer.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+    })
+    answerButtonsElement.innerText = answers.text
 
 }
-
+// questions and answers
 let questions = [
     {
-        question: 'what is 2 + 2',
-        answters: [
+        question: 'What is 2 + 2',
+        answers: [
             { text: '4', correct: true },
-            { text: '7', correct: false}
+            { text: '7', correct: false},
+            { text: '8', correct: false},
+            { text: '10', correct: false}
         ]
     }
 ]
