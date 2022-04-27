@@ -6,39 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
 </head>
+<!-- header with link to high scores and timer -->
+<header class="header-text">
+    <a href="high-scores-page">High Scores</a>
+    <h4>Timer: <span class="timer-count">60</span></h4>
+</header>
 
-<body class="body">
+<body>
     <main>
-         <!-- header with link to high scores and timer -->
-        <header class="header-text">
-            <a href="high-scores-page">High Scores</a>
-            <h4>Timer: <span class="timer-count">60</span></h4>
-        </header>
-
-       
 
         <!-- page1 with start button and intro to quiz -->
-
-        <div class="large-font">Coding Quiz</div>
         <div class="intro">
-            This is a quiz to test your knowledge of JavaScript! But beware, every time you choose a wrong answer 10
+            <div class="large-font">Coding Quiz</div>
+            <div id="intro-text" class="intro-text">
+                This is a quiz to test your knowledge of JavaScript! But beware, every time you choose a wrong answer 10
                 seconds is deducted from your remaining time.
             </div>
-    
-        <!-- start button that will disappear when clicked -->
-        <div class="start-button">
-            <button class="start-button">Start</button>
         </div>
-        <!-- multiple choice questions -->
-        <div id="question-container" class="hide">
-            <div id="question">
-            <div id="answer-buttons" class="button-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
 
+        <!-- start button that will disappear when clicked -->
+        <div class="big-button">
+            <button id="start-button" class="start-button">Start</button>
+        </div>
+
+        <!-- !!! style this div! multiple choice questions -->
+        <div class="question-container" id="question-container">
+            <!-- empty div for text from question to fill -->
+            <div id="question_text"></div>
+            <!-- buttons with different answer options -->
+            <div id="answer-buttons" class="button-grid">
+                <button class="option-1" id="option-1"></button>
+                <button class="option-2" id="option-2"></button>
+                <button class="option-3" id="option-3"></button>
+                <button class="option-4" id="option-4"></button>
             </div>
+        </div>
 
     </main>
     <script src="assets/script.js"></script>
@@ -49,3 +51,4 @@
 
 <!-- last page with box to enter your info to save your scored -->
 <!-- high scores page with scores displayed, a button to go back to page1 and button to clear high scores  -->
+

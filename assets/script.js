@@ -1,11 +1,12 @@
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-let questionContainerElement = document.getElementById('question-container')
+let questionContainerElement = document.getElementById('question-container');
 let shuffledQuestions, currentQuestionIndex
-let questionElement = document.querySelector('.intro')
-let answerButtonsElement = document.getElementById('answer-buttons')
-let introQuestion = document.querySelector(".intro")
+let questionElement = document.querySelector('.intro');
+let answerButtonsElement = document.getElementById('answer-buttons');
+let intro = document.querySelector(".intro");
+var answered;
 
 // index to be filled each time a new question is loaded
 
@@ -19,21 +20,36 @@ let score = []
 
 // The init function is called when the page loads 
 function init() {
-    getHighScore()
+    questionContainerElement.classList.add('hide')
 }
 
 // The startGame function is called when the start button is clicked
 function startGame() {
+    intro.classList.add('hide')
     startButton.classList.add('hide')
    // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
-    questionsContainer = questions.sort(() => Math.random() - .5)
+    // questionsContainer = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
+  //  document.getElementById('intro').style.display = "none";
     showNextQuestion()
     // Starts timer
     startTimer()
     console.log('started')
+
+    load_question(currentQuestionIndex);
+
+}
+
+function load_question(currentQuestionIndex) {
+    document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
+    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
+    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
+    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
+    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
+    answer_question() 
+
 }
 
 function showNextQuestion(question) {
@@ -42,33 +58,49 @@ function showNextQuestion(question) {
         let button = document.createElement('button')
         button.innerText = answers.text
         button.classList.add('btn')
+        answerButtonsElement.innerText = answers.text
     })
-    answerButtonsElement.innerText = answers.text
+    
 
 }
-// questions and answers
-let question = [
-    {
+// questions and answers index
+let quiz = [
+    
+    { 
         question: 'What is 2 + 2?',
-        answers: [
-            { text: '4', correct: true },
-            { text: '7', correct: false },
-            { text: '8', correct: false },
-            { text: '10', correct: false }
-        ]
+        choices: ['5', '4', '6', '3'],
+        answer: '4'
     },
+           
     {
-        question: 'what is 1+1?',
-        answers: [
-            { text: '5', correct: false },
-            { text: '4', correct: false },
-            { text: '2', correct: true },
-            { text: '9', correct: false }
-        ]
+        question: 'What is 1+1?',
+        choices: ['2', '3', '6', '4'],
+        answer: '2'
+    },
+
+    {
+        question: 'What is 5+5?',
+        choices: ['3', '12', '13', '10'],
+        answer: '10'
+    },
+
+    {
+        question: 'What is 20 x 2?',
+        choices: ['30', '50', '40', '60'],
+        answer: '40'
     }
 ]
 
+function answer_question (event) {
+answered = event.target.innnerHTML;
 
+if (answered === quiz[currentQuestionIndex]["answer"]) {
+    timerCount += 10
+} else {
+    timerCount -= 10
+}
+currentQuestionIndex += 1
+}
 
 
 // Updates point count on screen and sets win count to client storage
