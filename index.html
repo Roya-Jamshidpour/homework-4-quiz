@@ -1,57 +1,64 @@
-      <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Coding Quiz App</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="./assets/style.css" />
-      </head>
-      <body>
-        <header class= "timer-text">
-                    <a href="high-scores-page">High Scores</a>
-                    <h4>Timer:<span class="timer-count">60</span></h4>     
-        </header>
+<!DOCTYPE html>
+<html>
 
-        <main>
-            <div class= "large-font">Coding Quiz</div>
-            <p class="questions">This is a quiz to test your knowledge of JavaScript!</p>
-          <button class="start-button">Start</button>
-          <section>
-            <div class="card word-guess">
-              <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+</head>
+
+<body>
+
+
+    <main>
+        <header class="header-text">
+            <a href="high-scores-page">High Scores</a>
+            <h4>Timer: <span class="timer-count">60</span></h4>
+        </header>
+        <div class="large-font">Coding Quiz</div>
+        <div class="container"> 
+            <p>This is a quiz to test your knowledge of JavaScript! But beware, every time you choose a wrong answer 10 seconds 
+                is deducted from your remaining time.</p>
             </div>
-          </section>
-    
-          <section>
-            <div class="card results">
-              <div class = "win-loss-container">
-              <div>
-              <h2>Wins: <span class="win">0 </span> </h2>
-              <h2>Losses: <span class="lose">0</span></h2>
+        <div class="start-button">
+            <button class="start-button">Start</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="button-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+
             </div>
-              <button class="reset-button">Reset Score</button>
-          </div>
-              <div class= "card timer">
-                <div class = "timer-text">
-                <div class="large-font timer-count">60</div>
-                <div>seconds remaining</div>
-              </div>
-            
-              </div>
-            </div>
-          </section>
-        </main>
-        <script src="assets/script.js"></script>
-      </body>
-    </html>
-    
-    
-    
-    
-    
-    
-    <!-- header with link to high scores and timer -->
-      <!-- page1 with start button and quiz -->
-      <!-- 5 pages with multiple choice questions -->
-     <!-- last page with box to enter your info to save your scored -->
-      <!-- high scores page with scores displayed, a button to go back to page1 and button to clear high scores  -->
+
+            <section>
+                <div class="card results">
+                    <div class="win-loss-container">
+                        <div>
+                            <h2>High Scores:</h2>
+                        </div>
+                        <button class="reset-button">Reset Score</button>
+                    </div>
+
+
+                </div>
+        </div>
+        </section>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- header with link to high scores and timer -->
+<!-- page1 with start button and quiz -->
+<!-- 5 pages with multiple choice questions -->
+<!-- last page with box to enter your info to save your scored -->
+<!-- high scores page with scores displayed, a button to go back to page1 and button to clear high scores  -->
