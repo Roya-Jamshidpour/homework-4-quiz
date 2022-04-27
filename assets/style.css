@@ -35,9 +35,12 @@ body {
 
 .start-button {
 font-weight: bold;
+font-size: 30px;
 display: flex;
 justify-content: center;
-line-height: 30px;
+padding: 20px 40px;
+text-align: center;
+
 }
 
 .reset-button {
@@ -139,10 +142,6 @@ p {
   .large-font {
     font-size: 2em;
   }
-
-  .reset-button {
-    font-size: 12px;
-    width: 20ox;
     
   }
-}
+
