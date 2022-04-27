@@ -1,20 +1,20 @@
 * {
-  box-sizing: border-box;
+  
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: none;
   list-style: none;
   text-decoration: none;
   color: black;
-  
+  text-align: center;
 }
 
-body {
+.body {
   margin-left: 30px;
   margin-right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  margin: 20px 20px;
 }
 
 .header-text {
@@ -23,8 +23,7 @@ body {
   color: black;
   font-size: 1em;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
+ 
 }
 
 .questions {
@@ -90,7 +89,6 @@ button:hover {
 header {
   display: inline-block;
   color: black;
-  border-bottom:30px #879274;
   font-size: 1em;
   text-align: center;
 }
@@ -99,27 +97,23 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  display: flex;
+  justify-content: center;
+  
+  
 }
 .results {
   width: 30vw;
   height: 400px;
 }
 
-.container {
-  width: 800px;
-  max-width: 80%;
-  margin: 20px 20px;
-}
-
 .large-font {
   font-size: 3em;
   text-align:center;
+  padding-bottom: 20px;
 }
 
-p {
-  display: flex;
-  justify-content: center;
-}
+
 
 /* hides buttons with this class */
 .hide {
@@ -131,13 +125,6 @@ p {
     flex-direction: column;
   }
 
-  section {
-    background-color: white;
-    margin: 20px auto;
-    width: 92vw;
-  }
-}
-
 @media screen and (max-width: 504px) {
   .large-font {
     font-size: 2em;
@@ -145,3 +132,4 @@ p {
     
   }
 
+}

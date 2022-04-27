@@ -3,84 +3,84 @@ var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 let questionContainerElement = document.getElementById('question-container')
 let shuffledQuestions, currentQuestionIndex
-let questionElement = document.getElementById('question')
+let questionElement = document.querySelector('.intro')
 let answerButtonsElement = document.getElementById('answer-buttons')
+let introQuestion = document.querySelector(".intro")
 
+// index to be filled each time a new question is loaded
 
 // when start button is clicked quiz begins and time also
 startButton.addEventListener('click', startGame)
 
-var winCounter = 0;
-var loseCounter = 0;
-var isWin = false;
-var timer;
-var timerCount;
+let timer;
+let timerCount = 60;
+let score = []
 
-// Arrays used to create blanks and letters on screen
-var lettersInChosenWord = [];
-var blanksLetters = [];
 
 // The init function is called when the page loads 
 function init() {
-    getWins();
-    getlosses();
+    getHighScore()
 }
 
 // The startGame function is called when the start button is clicked
 function startGame() {
     startButton.classList.add('hide')
+   // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
     questionsContainer = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-    setNextQuestion()
+    showNextQuestion()
     // Starts timer
     startTimer()
     console.log('started')
 }
 
-function setNextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question
+function showNextQuestion(question) {
+    questionElement.innerText = question
     question.answer.forEach(answer => {
         let button = document.createElement('button')
-        button.innerText = answer.text
+        button.innerText = answers.text
         button.classList.add('btn')
     })
     answerButtonsElement.innerText = answers.text
 
 }
 // questions and answers
-let questions = [
+let question = [
     {
-        question: 'What is 2 + 2',
+        question: 'What is 2 + 2?',
         answers: [
             { text: '4', correct: true },
-            { text: '7', correct: false},
-            { text: '8', correct: false},
-            { text: '10', correct: false}
+            { text: '7', correct: false },
+            { text: '8', correct: false },
+            { text: '10', correct: false }
+        ]
+    },
+    {
+        question: 'what is 1+1?',
+        answers: [
+            { text: '5', correct: false },
+            { text: '4', correct: false },
+            { text: '2', correct: true },
+            { text: '9', correct: false }
         ]
     }
 ]
 
 
 
-// The setTimer function starts and stops the timer and triggers winGame() and loseGame()
-      
 
-// Updates win count on screen and sets win count to client storage
-function setWins() {
+// Updates point count on screen and sets win count to client storage
+function getHighScore() {
     win.textContent = winCounter;
-    localStorage.setItem("winCount", winCounter);
+    localStorage.setItem("score", getPoints);
 }
 
 // These functions are used by init
-function getWins() {
+function getPoints() {
     // Get stored value from client storage, if it exists
-    var storedWins = localStorage.getItem("winCount");
+    var storedPoints = localStorage.getItem("winCount");
     // If stored value doesn't exist, set counter to 0
     if (storedWins === null) {
         winCounter = 0;
