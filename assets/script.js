@@ -1,11 +1,10 @@
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-let questionContainerElement = document.getElementById('question-container');
-let shuffledQuestions, currentQuestionIndex
+let introText = document.getElementById('intro-text')
+let questionContainerElement = document.getElementById('question-container')
 let questionElement = document.querySelector('.intro');
 let answerButtonsElement = document.getElementById('answer-buttons');
-let intro = document.querySelector(".intro");
 var answered;
 
 // index to be filled each time a new question is loaded
@@ -25,14 +24,12 @@ function init() {
 
 // The startGame function is called when the start button is clicked
 function startGame() {
-    intro.classList.add('hide')
+    introText.classList.add('hide')
     startButton.classList.add('hide')
    // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
-    // questionsContainer = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-  //  document.getElementById('intro').style.display = "none";
     showNextQuestion()
     // Starts timer
     startTimer()
@@ -41,29 +38,7 @@ function startGame() {
     load_question(currentQuestionIndex);
 
 }
-
-function load_question(currentQuestionIndex) {
-    document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
-    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
-    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
-    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
-    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
-    answer_question() 
-
-}
-
-function showNextQuestion(question) {
-    questionElement.innerText = question
-    question.answer.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answers.text
-        button.classList.add('btn')
-        answerButtonsElement.innerText = answers.text
-    })
-    
-
-}
-// questions and answers index
+// quiz questions and answers
 let quiz = [
     
     { 
@@ -103,6 +78,27 @@ currentQuestionIndex += 1
 }
 
 
+function load_question(currentQuestionIndex) {
+    document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
+    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
+    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
+    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
+    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
+    answer_question() 
+
+}
+
+function showNextQuestion(question) {
+    questionElement.innerText = question
+    question.answer.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        answerButtonsElement.innerText = answer.text
+    })
+    
+
+}
+
 // Updates point count on screen and sets win count to client storage
 function getHighScore() {
     win.textContent = winCounter;
@@ -127,14 +123,3 @@ function getPoints() {
 // Calls init() so that it fires when page opened
 init();
 
-// Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
-
-function resetGame() {
-    // Resets win and loss counts
-    winCounter = 0;
-    // Renders win and loss counts and sets them into client storage
-    setWins()
-}
-// Attaches event listener to button
-resetButton.addEventListener("click", resetGame);
