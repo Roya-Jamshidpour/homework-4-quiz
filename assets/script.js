@@ -91,17 +91,19 @@ function showNextQuestion() {
 function answer_question() {
     if (this.textContent === quiz[currentQuestionIndex].answer) {
         currentQuestionIndex++;
+        alert("Correct!")
         if (currentQuestionIndex < quiz.length) {
 
             showNextQuestion();
         }
-        else {
-            countdown -= 10;
+     } else {
+        alert("Incorrect, try again!");
+            timerCount -= 10;
 
         }
 
     }
-} init();
+init();
 
 // function answer_question(event) {
 //     answered = event.target.innnerHTML;
