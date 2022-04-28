@@ -59,8 +59,8 @@ function startGame() {
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
     showNextQuestion(quiz)
-    // Starts timer
-    startTimer()
+    // Starts timer!!!!!!!!
+    //startTimer()
     console.log('started')
 
     load_question(currentQuestionIndex);
@@ -76,18 +76,17 @@ function load_question() {
     answer_question() 
 
 }
-
+// displays question above choices boxes
 function showNextQuestion(quiz) {
     let setQuestion = quiz[currentQuestionIndex];
     quiz.forEach(question => console.log(question));
     document.getElementById('question_text').innerHTML = setQuestion.question;
+// displays answer choices in buttons
+    let setChoices = quiz[currentQuestionIndex];
+    quiz.forEach(choices => console.log(choices));
+        answerButtonsElement.innerHTML = setChoices.choices
+    }
 
-    let answer = setQuestion.answers;
-    questionElement.innerText = answer.question;
-    question.answer.forEach(answer => {
-        answerButtonsElement.innerHTML = answer
-    })
-}
 
 function answer_question (event) {
 answered = event.target.innnerHTML;

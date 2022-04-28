@@ -70,6 +70,13 @@ button:hover {
   
 }
 
+.button-grid {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* hides buttons with this class */
 .hide {
   display: none;
