@@ -50,6 +50,7 @@ let choiceBtn2 = document.getElementById('option-2');
 let choiceBtn3 = document.getElementById('option-3');
 let choiceBtn4 = document.getElementById('option-4');
 
+// when a button is clicked then the function to see if it is correct or not is called
 choiceBtn1.addEventListener('click', answer_question);
 choiceBtn1.addEventListener('click', answer_question);
 choiceBtn2.addEventListener('click', answer_question);
@@ -68,7 +69,7 @@ function startGame() {
     // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
-    showNextQuestion(quiz)
+    showNextQuestion()
     // Starts timer!!!!!!!!
     //startTimer()
     console.log('started');
@@ -77,7 +78,7 @@ function startGame() {
 }
 
 // displays question above choices boxes
-function showNextQuestion(quiz) {
+function showNextQuestion() {
     let setQuestion = quiz[currentQuestionIndex];
     quiz.forEach(question => console.log(question));
     document.getElementById('question_text').innerHTML = setQuestion.question;
@@ -98,12 +99,12 @@ function load_question() {
 
 }
 
-function answer_question(quiz) {
-    if (value === quiz[currentQuestionIndex].answer);
+function answer_question() {
+    if (this.value === quiz[currentQuestionIndex].answer);
 
-        questionsIndex++;
-        if (questionsIndex < questions.length) {
-            showQuestion();
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quiz.length) {
+            showNextQuestion();
         }
         else {
             countdown -= 10;
