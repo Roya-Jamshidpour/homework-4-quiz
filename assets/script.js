@@ -16,28 +16,6 @@ let timer;
 let timerCount = 60;
 let score = []
 
-
-// The init function is called when the page loads 
-function init() {
-    questionContainerElement.classList.add('hide')
-}
-
-// The startGame function is called when the start button is clicked
-function startGame() {
-    introText.classList.add('hide')
-    startButton.classList.add('hide')
-   // introElement.classList.add('hide')
-    timerCount = 60;
-    questionContainerElement.classList.remove('hide')
-    currentQuestionIndex = 0
-    showNextQuestion()
-    // Starts timer
-    startTimer()
-    console.log('started')
-
-    load_question(currentQuestionIndex);
-
-}
 // quiz questions and answers
 let quiz = [
     
@@ -66,17 +44,28 @@ let quiz = [
     }
 ]
 
-function answer_question (event) {
-answered = event.target.innnerHTML;
 
-if (answered === quiz[currentQuestionIndex]["answer"]) {
-    timerCount += 10
-} else {
-    timerCount -= 10
-}
-currentQuestionIndex += 1
+// The init function is called when the page loads 
+function init() {
+    questionContainerElement.classList.add('hide')
 }
 
+// The startGame function is called when the start button is clicked
+function startGame() {
+    introText.classList.add('hide')
+    startButton.classList.add('hide')
+   // introElement.classList.add('hide')
+    timerCount = 60;
+    questionContainerElement.classList.remove('hide')
+    currentQuestionIndex = 0
+    showNextQuestion(quiz)
+    // Starts timer
+    startTimer()
+    console.log('started')
+
+    load_question(currentQuestionIndex);
+
+}
 
 function load_question(currentQuestionIndex) {
     document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
@@ -88,21 +77,25 @@ function load_question(currentQuestionIndex) {
 
 }
 
-function showNextQuestion(question) {
-    questionElement.innerText = question
+function showNextQuestion(quiz) {
+    question.forEach(answer => { 
+    questionElement.innerText = answer.question })
     question.answer.forEach(answer => {
         let button = document.createElement('button')
         button.innerText = answer.text
         answerButtonsElement.innerText = answer.text
     })
-    
-
 }
 
-// Updates point count on screen and sets win count to client storage
-function getHighScore() {
-    win.textContent = winCounter;
-    localStorage.setItem("score", getPoints);
+function answer_question (event) {
+answered = event.target.innnerHTML;
+
+if (answered === quiz[currentQuestionIndex]["answer"]) {
+    timerCount += 10
+} else {
+    timerCount -= 10
+}
+currentQuestionIndex += 1
 }
 
 // These functions are used by init
