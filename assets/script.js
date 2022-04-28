@@ -61,8 +61,7 @@ function startGame() {
     showNextQuestion(quiz)
     // Starts timer!!!!!!!!
     //startTimer()
-    console.log('started')
-
+    console.log('started');
     load_question(currentQuestionIndex);
 
 }
@@ -75,11 +74,13 @@ function showNextQuestion(quiz) {
 // displays answer choices in buttons
     let setChoices = setQuestion.answer;
     quiz.forEach(choices => console.log(choices));
-        answerButtonsElement.innerHTML = setChoices.choices
+    console.log(document.getElementById("option-1"))
+        
     }
 
     function load_question() {
-        document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
+        document.getElementById("question_text").innerHTML = quiz[currentQuestionIndex]["question"]
+        console.log(quiz[currentQuestionIndex]["question"])
         document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
         document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
         document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
