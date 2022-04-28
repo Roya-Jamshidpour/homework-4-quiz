@@ -15,6 +15,7 @@ startButton.addEventListener('click', startGame)
 let timer;
 let timerCount = 60;
 let score = []
+currentQuestionIndex = 0
 
 // quiz questions and answers
 let quiz = [
@@ -57,7 +58,6 @@ function startGame() {
    // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
-    currentQuestionIndex = 0
     showNextQuestion(quiz)
     // Starts timer
     startTimer()
@@ -67,7 +67,7 @@ function startGame() {
 
 }
 
-function load_question(currentQuestionIndex) {
+function load_question() {
     document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
     document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
     document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
@@ -78,12 +78,14 @@ function load_question(currentQuestionIndex) {
 }
 
 function showNextQuestion(quiz) {
-    question.forEach(answer => { 
-    questionElement.innerText = answer.question })
+    let setQuestion = quiz[currentQuestionIndex];
+    quiz.forEach(question => console.log(question));
+    document.getElementById('question_text').innerHTML = setQuestion.question;
+
+    let answer = setQuestion.answers;
+    questionElement.innerText = answer.question;
     question.answer.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        answerButtonsElement.innerText = answer.text
+        answerButtonsElement.innerHTML = answer
     })
 }
 
