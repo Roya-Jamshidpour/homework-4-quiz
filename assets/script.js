@@ -44,6 +44,16 @@ let quiz = [
     }
 ]
 
+// buttons with choices for what to answer question with
+let choiceBtn1 = document.getElementById('option-1');
+let choiceBtn2 = document.getElementById('option-2');
+let choiceBtn3 = document.getElementById('option-3');
+let choiceBtn4 = document.getElementById('option-4');
+
+choiceBtn1.addEventListener('click', answer_question);
+choiceBtn1.addEventListener('click', answer_question);
+choiceBtn2.addEventListener('click', answer_question);
+choiceBtn3.addEventListener('click', answer_question);
 
 // The init function is called when the page loads 
 function init() {
@@ -89,54 +99,57 @@ function load_question() {
 }
 
 function answer_question(quiz) {
-    if (this.value === quiz[currentQuestionIndex].answer) {
+    if (value === quiz[currentQuestionIndex].answer);
+
         questionsIndex++;
-		if (questionsIndex < questions.length) {
-			showQuestion();
-		}
-	} else {
-		countdown -= 10;
-	}
+        if (questionsIndex < questions.length) {
+            showQuestion();
+        }
+        else {
+            countdown -= 10;
+
+        }
     }
 
-// function answer_question(event) {
-//     answered = event.target.innnerHTML;
 
-//     if (answered === quiz[currentQuestionIndex]["answer"]) {
-//         timerCount += 10
-//     } else {
-//         timerCount -= 10
-//     }
-//     currentQuestionIndex += 1
-// }
+    // function answer_question(event) {
+    //     answered = event.target.innnerHTML;
 
-// checks if the answer is correct or not
-// function answer_question() {
-// 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
-// 		currentQuestionIndex++;
-// 		if (currentQuestionIndex < question.length) {
-// 			showNextQuestion();
-// 		}
-// 	} else {
-// 		timerCount -= 10;
-// 	}
-// }
+    //     if (answered === quiz[currentQuestionIndex]["answer"]) {
+    //         timerCount += 10
+    //     } else {
+    //         timerCount -= 10
+    //     }
+    //     currentQuestionIndex += 1
+    // }
 
-// These functions are used by init
-function getPoints() {
-    // Get stored value from client storage, if it exists
-    var storedPoints = localStorage.getItem("winCount");
-    // If stored value doesn't exist, set counter to 0
-    if (storedWins === null) {
-        winCounter = 0;
-    } else {
-        // If a value is retrieved from client storage set the winCounter to that value
-        winCounter = storedWins;
-    }
-    //Render win count to page
-    win.textContent = winCounter;
-}
+    // checks if the answer is correct or not
+    // function answer_question() {
+    // 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
+    // 		currentQuestionIndex++;
+    // 		if (currentQuestionIndex < question.length) {
+    // 			showNextQuestion();
+    // 		}
+    // 	} else {
+    // 		timerCount -= 10;
+    // 	}
+    // }
 
-// Calls init() so that it fires when page opened
-init();
+    // These functions are used by init
+    // function getPoints() {
+    //     // Get stored value from client storage, if it exists
+    //     var storedPoints = localStorage.getItem("winCount");
+    //     // If stored value doesn't exist, set counter to 0
+    //     if (storedWins === null) {
+    //         winCounter = 0;
+    //     } else {
+    //         // If a value is retrieved from client storage set the winCounter to that value
+    //         winCounter = storedWins;
+    //     }
+    //     //Render win count to page
+    //     win.textContent = winCounter;
+    // }
+
+    // Calls init() so that it fires when page opened
+    init();
 
