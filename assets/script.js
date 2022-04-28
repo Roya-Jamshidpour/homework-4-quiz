@@ -67,26 +67,26 @@ function startGame() {
 
 }
 
-function load_question() {
-    document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
-    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
-    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
-    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
-    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
-    answer_question() 
-
-}
 // displays question above choices boxes
 function showNextQuestion(quiz) {
     let setQuestion = quiz[currentQuestionIndex];
     quiz.forEach(question => console.log(question));
     document.getElementById('question_text').innerHTML = setQuestion.question;
 // displays answer choices in buttons
-    let setChoices = quiz[currentQuestionIndex];
+    let setChoices = setQuestion.answer;
     quiz.forEach(choices => console.log(choices));
         answerButtonsElement.innerHTML = setChoices.choices
     }
 
+    function load_question() {
+        document.getElementById("question-text").innerHTML = quiz[currentQuestionIndex]["question"]
+        document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
+        document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
+        document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
+        document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
+        answer_question() 
+    
+    }
 
 function answer_question (event) {
 answered = event.target.innnerHTML;
