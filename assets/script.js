@@ -1,11 +1,10 @@
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
+let quizStartText = document.querySelector(".large-font")
 let introText = document.getElementById('intro-text')
 let questionContainerElement = document.getElementById('question-container')
 let questionElement = document.querySelector('.intro');
-let answerButtonsElement = document.getElementById('answer-buttons');
-var answered;
 
 // index to be filled each time a new question is loaded
 
@@ -19,13 +18,13 @@ currentQuestionIndex = 0
 
 // quiz questions and answers
 let quiz = [
-    
-    { 
+
+    {
         question: 'What is 2 + 2?',
         choices: ['5', '4', '6', '3'],
         answer: '4'
     },
-           
+
     {
         question: 'What is 1+1?',
         choices: ['2', '3', '6', '4'],
@@ -55,7 +54,8 @@ function init() {
 function startGame() {
     introText.classList.add('hide')
     startButton.classList.add('hide')
-   // introElement.classList.add('hide')
+    quizStartText.classList.add('hide')
+    // introElement.classList.add('hide')
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
     showNextQuestion(quiz)
@@ -71,34 +71,56 @@ function showNextQuestion(quiz) {
     let setQuestion = quiz[currentQuestionIndex];
     quiz.forEach(question => console.log(question));
     document.getElementById('question_text').innerHTML = setQuestion.question;
-// displays answer choices in buttons
+    // displays answer choices in buttons
     let setChoices = setQuestion.answer;
     quiz.forEach(choices => console.log(choices));
-    console.log(document.getElementById("option-1"))
-        
+
+}
+
+function load_question() {
+    document.getElementById("question_text").innerHTML = quiz[currentQuestionIndex]["question"]
+    console.log(quiz[currentQuestionIndex]["question"])
+    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
+    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
+    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
+    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
+    answer_question()
+
+}
+
+function answer_question(quiz) {
+    if (this.value === quiz[currentQuestionIndex].answer) {
+        questionsIndex++;
+		if (questionsIndex < questions.length) {
+			showQuestion();
+		}
+	} else {
+		countdown -= 10;
+	}
     }
 
-    function load_question() {
-        document.getElementById("question_text").innerHTML = quiz[currentQuestionIndex]["question"]
-        console.log(quiz[currentQuestionIndex]["question"])
-        document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
-        document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
-        document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
-        document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
-        answer_question() 
-    
-    }
+// function answer_question(event) {
+//     answered = event.target.innnerHTML;
 
-function answer_question (event) {
-answered = event.target.innnerHTML;
+//     if (answered === quiz[currentQuestionIndex]["answer"]) {
+//         timerCount += 10
+//     } else {
+//         timerCount -= 10
+//     }
+//     currentQuestionIndex += 1
+// }
 
-if (answered === quiz[currentQuestionIndex]["answer"]) {
-    timerCount += 10
-} else {
-    timerCount -= 10
-}
-currentQuestionIndex += 1
-}
+// checks if the answer is correct or not
+// function answer_question() {
+// 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
+// 		currentQuestionIndex++;
+// 		if (currentQuestionIndex < question.length) {
+// 			showNextQuestion();
+// 		}
+// 	} else {
+// 		timerCount -= 10;
+// 	}
+// }
 
 // These functions are used by init
 function getPoints() {
