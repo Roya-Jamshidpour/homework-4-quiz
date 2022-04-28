@@ -7,7 +7,7 @@
   color: black;
   margin: 20px 20px;
 }
-
+/* header with timer and link to High Scores */
 .header-text {
   display: flex;
   justify-content: space-between;
@@ -17,12 +17,13 @@
  
 }
 
+/* title of game */
 .large-font {
   font-size: 3em;
   text-align:center;
   padding-bottom: 20px;
 }
-
+/* text for description of game */
 .intro-text {
   display: flex;
   justify-content: center;

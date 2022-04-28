@@ -73,84 +73,74 @@ function startGame() {
     // Starts timer!!!!!!!!
     //startTimer()
     console.log('started');
-    load_question(currentQuestionIndex);
-
 }
 
 // displays question above choices boxes
 function showNextQuestion() {
     let setQuestion = quiz[currentQuestionIndex];
-    quiz.forEach(question => console.log(question));
+
     document.getElementById('question_text').innerHTML = setQuestion.question;
+
     // displays answer choices in buttons
-    let setChoices = setQuestion.answer;
-    quiz.forEach(choices => console.log(choices));
-
-}
-
-function load_question() {
-    document.getElementById("question_text").innerHTML = quiz[currentQuestionIndex]["question"]
-    console.log(quiz[currentQuestionIndex]["question"])
-    document.getElementById("option-1").innerHTML = quiz[currentQuestionIndex]["choices"][0]
-    document.getElementById("option-2").innerHTML = quiz[currentQuestionIndex]["choices"][1]
-    document.getElementById("option-3").innerHTML = quiz[currentQuestionIndex]["choices"][2]
-    document.getElementById("option-4").innerHTML = quiz[currentQuestionIndex]["choices"][3]
-    answer_question()
-
+    document.getElementById("option-1").textContent = quiz[currentQuestionIndex]["choices"][0]
+    document.getElementById("option-2").textContent = quiz[currentQuestionIndex]["choices"][1]
+    document.getElementById("option-3").textContent = quiz[currentQuestionIndex]["choices"][2]
+    document.getElementById("option-4").textContent = quiz[currentQuestionIndex]["choices"][3]
 }
 
 function answer_question() {
-    if (this.value === quiz[currentQuestionIndex].answer);
-
+    if (this.textContent === quiz[currentQuestionIndex].answer) {
         currentQuestionIndex++;
         if (currentQuestionIndex < quiz.length) {
+
             showNextQuestion();
         }
         else {
             countdown -= 10;
 
         }
+
     }
+} init();
 
+// function answer_question(event) {
+//     answered = event.target.innnerHTML;
 
-    // function answer_question(event) {
-    //     answered = event.target.innnerHTML;
+//     if (answered === quiz[currentQuestionIndex]["answer"]) {
+//         timerCount += 10
+//     } else {
+//         timerCount -= 10
+//     }
+//     currentQuestionIndex += 1
+// }
 
-    //     if (answered === quiz[currentQuestionIndex]["answer"]) {
-    //         timerCount += 10
-    //     } else {
-    //         timerCount -= 10
-    //     }
-    //     currentQuestionIndex += 1
-    // }
+// checks if the answer is correct or not
+// function answer_question() {
+// 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
+// 		currentQuestionIndex++;
+// 		if (currentQuestionIndex < question.length) {
+// 			showNextQuestion();
+// 		}
+// 	} else {
+// 		timerCount -= 10;
+// 	}
+// }
 
-    // checks if the answer is correct or not
-    // function answer_question() {
-    // 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
-    // 		currentQuestionIndex++;
-    // 		if (currentQuestionIndex < question.length) {
-    // 			showNextQuestion();
-    // 		}
-    // 	} else {
-    // 		timerCount -= 10;
-    // 	}
-    // }
+// These functions are used by init
+// function getPoints() {
+//     // Get stored value from client storage, if it exists
+//     var storedPoints = localStorage.getItem("winCount");
+//     // If stored value doesn't exist, set counter to 0
+//     if (storedWins === null) {
+//         winCounter = 0;
+//     } else {
+//         // If a value is retrieved from client storage set the winCounter to that value
+//         winCounter = storedWins;
+//     }
+//     //Render win count to page
+//     win.textContent = winCounter;
+// }
 
-    // These functions are used by init
-    // function getPoints() {
-    //     // Get stored value from client storage, if it exists
-    //     var storedPoints = localStorage.getItem("winCount");
-    //     // If stored value doesn't exist, set counter to 0
-    //     if (storedWins === null) {
-    //         winCounter = 0;
-    //     } else {
-    //         // If a value is retrieved from client storage set the winCounter to that value
-    //         winCounter = storedWins;
-    //     }
-    //     //Render win count to page
-    //     win.textContent = winCounter;
-    // }
-
-    // Calls init() so that it fires when page opened
-    init();
+// Calls init() so that it fires when page opened
+init();
 
