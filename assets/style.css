@@ -79,6 +79,14 @@ button:hover {
   align-items: center;
 }
 
+/* at end of game input area to save High Score */
+.initials-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 /* hides buttons with this class */
 .hide {
   display: none;

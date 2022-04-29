@@ -1,19 +1,20 @@
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-let quizStartText = document.querySelector(".large-font")
-let introText = document.getElementById('intro-text')
-let questionContainerElement = document.getElementById('question-container')
+let quizStartText = document.querySelector(".large-font");
+let introText = document.getElementById('intro-text');
+let questionContainerElement = document.getElementById('question-container');
 let questionElement = document.querySelector('.intro');
-
-// index to be filled each time a new question is loaded
+let submitButton = document.getElementById('submit-button');
 
 // when start button is clicked quiz begins and time also
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame);
+
+
 
 let timer;
 let timerCount = 60;
-let score = []
+let highScore = []
 currentQuestionIndex = 0
 
 // quiz questions and answers
@@ -59,6 +60,7 @@ choiceBtn4.addEventListener('click', answer_question);
 // The init function is called when the page loads 
 function init() {
     questionContainerElement.classList.add('hide')
+    document.getElementById('initials-field').classList.add('hide')
 }
 
 // The startGame function is called when the start button is clicked
@@ -78,19 +80,19 @@ function startGame() {
 // function to start timer count
 function startTimer() {
     // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      timerElement.textContent = timerCount;
-    //   when list of questions is thru game ends
-    if (timerCount <= 0 || currentQuestionIndex >= quiz.length) {
-        clearInterval(timer)
-      endGame();
-    //   when timer count reaches 0 game ends
-      if (timerCount <= 0) 
-      clearInterval(timer)
-      endGame();
-    
-      }
+    timer = setInterval(function () {
+        timerCount--;
+        timerElement.textContent = timerCount;
+        //   when list of questions is thru game ends
+        if (timerCount <= 0 || currentQuestionIndex >= quiz.length) {
+            clearInterval(timer)
+            endGame();
+            //   when timer count reaches 0 game ends
+            if (timerCount <= 0)
+                clearInterval(timer)
+            endGame();
+
+        }
     }, 1000);
 }
 
@@ -107,6 +109,7 @@ function showNextQuestion() {
     document.getElementById("option-4").textContent = quiz[currentQuestionIndex]["choices"][3]
 }
 
+// function to decide if user answer is correct or incorrect
 function answer_question() {
     if (this.textContent === quiz[currentQuestionIndex].answer) {
         currentQuestionIndex++;
@@ -115,25 +118,34 @@ function answer_question() {
 
             showNextQuestion();
         }
-        // if incorrect answer given then 10sec deducted from time
-     } else {
+        // if incorrect answer given then 10sec deducted from timeCount
+    } else {
         alert("Incorrect, try again!");
-            timerCount -= 10;
-
-        }
+        timerCount -= 10;
 
     }
+}
+
 
 function endGame(timerCount) {
     console.log("end")
     questionContainerElement.classList.add('hide');
-    document.getElementById('question_text').innerHTML = "Enter your initials and save your score!";
-
+    document.getElementById('initials-field').classList.remove('hide')
 
 
 }
 
-
+function storeHighScore() {
+    // Stringify and set key in localStorage to highScore array
+    let initials = document.getElementById('initials').value;
+    highScore = {
+		name: initials,
+		score: timerCount,
+	};
+    console.log(highScore)
+    localStorage.setItem("highScores", JSON.stringify(highScore));
+    
+}
 
 // Calls init() so that it fires when page opened
 init();

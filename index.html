@@ -18,9 +18,30 @@
         <!-- page1 with start button and intro to quiz -->
         <div class="intro">
             <div class="large-font">Coding Quiz</div>
+
+            <!-- empty div to display end score -->
+            <div class="end-text" id="end-text"></div>
+
+            <!-- empty div for display of high score  -->
+            <div class="high-score" id="high-score"></div>
+
+            <!-- div to for user input of initials to save high score -->
+            <div class="initials-field" id="initials-field">
+                <h1>Save Your High Score!</h1>
+                <form id="initials-form" method="">
+                    <!-- to input initials to save and submit high score -->
+                    <input type="text" placeholder="Write your initials..." name="initials" id="initials">
+                    <button id="submit-button">Submit</button></label>
+                </form>
+
+            </div>
+
+
+            <!-- intro text at start of game -->
             <div id="intro-text" class="intro-text">
                 This is a quiz to test your knowledge of JavaScript! But beware, every time you choose a wrong answer 10
-                seconds is deducted from your remaining time. In the end, the amount remaining time in your timer will be your score
+                seconds is deducted from your remaining time. In the end, the amount remaining time in your timer will
+                be your score
                 at the end! Choose wisely, ya nerd!
             </div>
         </div>
@@ -48,8 +69,3 @@
 </body>
 
 </html>
-
-
-<!-- last page with box to enter your info to save your scored -->
-<!-- high scores page with scores displayed, a button to go back to page1 and button to clear high scores  -->
-
