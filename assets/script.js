@@ -9,6 +9,7 @@ let submitButton = document.getElementById('submit-button');
 
 // when start button is clicked quiz begins and time also
 startButton.addEventListener('click', startGame);
+submitButton.addEventListener('click', storeHighScore);
 
 
 
@@ -126,24 +127,23 @@ function answer_question() {
     }
 }
 
-
+// allows initials field and submit button to pop up 
 function endGame(timerCount) {
     console.log("end")
     questionContainerElement.classList.add('hide');
     document.getElementById('initials-field').classList.remove('hide')
-
-
 }
 
-function storeHighScore() {
+function storeHighScore(event) {
+    event.preventDefault();
     // Stringify and set key in localStorage to highScore array
     let initials = document.getElementById('initials').value;
-    highScore = {
+    highScore = "High Score" + {
 		name: initials,
 		score: timerCount,
 	};
     console.log(highScore)
-    localStorage.setItem("highScores", JSON.stringify(highScore));
+    localStorage.setItem(highScore, JSON.stringify(highScore));
     
 }
 
