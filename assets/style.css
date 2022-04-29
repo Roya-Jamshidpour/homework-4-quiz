@@ -45,11 +45,11 @@ button {
   border-radius: 8px;
   color: #13293d;
   cursor: pointer;
-  font-size: 2em;
-  letter-spacing: 0.21px;
+  font-size: 1em;
+  letter-spacing: 0.2px;
   line-height: 16px;
-  max-width: 255px;
-  padding: 20px 52px;
+  max-width: 2250px;
+  padding: 20px 70px;
   text-align: center;
   transition-duration: 0.15s;
   transition-property: background-color;
@@ -65,6 +65,8 @@ button:hover {
 .big-button {
   display: flex;
   justify-content: center;
+  letter-spacing: 2px;
+  font-size: 1.7em;
 }
 
 /* styles for header */

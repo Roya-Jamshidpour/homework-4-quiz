@@ -143,15 +143,14 @@ function storeHighScore(event) {
 		score: timerCount,
 	};
     
-    localStorage.setItem("highScore", JSON.stringify(highScore));
+    window.localStorage.setItem('newScore', JSON.stringify(highScore));
 
     console.log(highScore)
-    window.location.href= "./HighScoresPage.html";
-    // go to High Scores page
+     // go to High Scores page
+   window.location.href= "./HighScoresPage.html";
+   
 
 }
 
-// Calls init() so that it fires when page opened
-init();
-
-//localstorage.getItem
+// so init function fires when page opens
+init()
