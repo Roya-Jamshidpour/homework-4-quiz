@@ -52,9 +52,9 @@ let choiceBtn4 = document.getElementById('option-4');
 
 // when a button is clicked then the function to see if it is correct or not is called
 choiceBtn1.addEventListener('click', answer_question);
-choiceBtn1.addEventListener('click', answer_question);
 choiceBtn2.addEventListener('click', answer_question);
 choiceBtn3.addEventListener('click', answer_question);
+choiceBtn4.addEventListener('click', answer_question);
 
 // The init function is called when the page loads 
 function init() {
@@ -82,7 +82,7 @@ function startTimer() {
       timerCount--;
       timerElement.textContent = timerCount;
     //   when list of questions is thru game ends
-    if (timerCount <= 0 && currentQuestionIndex >= quiz.length) {
+    if (timerCount <= 0 || currentQuestionIndex >= quiz.length) {
         clearInterval(timer)
       endGame();
     //   when timer count reaches 0 game ends
