@@ -70,7 +70,7 @@ function startGame() {
     timerCount = 60;
     questionContainerElement.classList.remove('hide')
     showNextQuestion()
-    // Starts timer!!!!!!!!
+    // Starts timer!
     startTimer()
     console.log('started');
 }
@@ -81,9 +81,15 @@ function startTimer() {
     timer = setInterval(function() {
       timerCount--;
       timerElement.textContent = timerCount;
+    //   when list of questions is thru game ends
+    if (timerCount <= 0 || currentQuestionIndex >= quiz.length) {
+      endGame();
     //   when timer count reaches 0 game ends
-      if (timerCount === 0) endGame() 
-          // Clears interval and stops timer
+      if (timerCount <= 0) 
+      clearInterval(timer)
+      endGame();
+    
+      }
     }, 1000);
 }
 
@@ -108,6 +114,7 @@ function answer_question() {
 
             showNextQuestion();
         }
+        // if incorrect answer given then 10sec deducted from time
      } else {
         alert("Incorrect, try again!");
             timerCount -= 10;
@@ -115,7 +122,16 @@ function answer_question() {
         }
 
     }
-init();
+
+function endGame(timerCount) {
+    console.log("end")
+    questionContainerElement.classList.add('hide');
+    document.getElementById('question_text').innerHTML = ["Enter your initials and save your score!"];
+
+
+
+}
+
 
 
 // Calls init() so that it fires when page opened
