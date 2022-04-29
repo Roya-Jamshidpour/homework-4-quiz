@@ -138,15 +138,16 @@ function storeHighScore(event) {
     event.preventDefault();
     // Stringify and set key in localStorage to highScore array
     let initials = document.getElementById('initials').value;
-    highScore = "High Score" + {
+    highScore = {
 		name: initials,
 		score: timerCount,
 	};
     console.log(highScore)
-    localStorage.setItem(highScore, JSON.stringify(highScore));
+    localStorage.setItem(highScore, JSON.stringify);
     
 }
 
 // Calls init() so that it fires when page opened
 init();
 
+//localstorage.getItem
