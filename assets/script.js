@@ -71,8 +71,20 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     showNextQuestion()
     // Starts timer!!!!!!!!
-    //startTimer()
+    startTimer()
     console.log('started');
+}
+
+// function to start timer count
+function startTimer() {
+    // Sets timer
+    timer = setInterval(function() {
+      timerCount--;
+      timerElement.textContent = timerCount;
+    //   when timer count reaches 0 game ends
+      if (timerCount === 0) endGame() 
+          // Clears interval and stops timer
+    }, 1000);
 }
 
 // displays question above choices boxes
@@ -105,43 +117,6 @@ function answer_question() {
     }
 init();
 
-// function answer_question(event) {
-//     answered = event.target.innnerHTML;
-
-//     if (answered === quiz[currentQuestionIndex]["answer"]) {
-//         timerCount += 10
-//     } else {
-//         timerCount -= 10
-//     }
-//     currentQuestionIndex += 1
-// }
-
-// checks if the answer is correct or not
-// function answer_question() {
-// 	if (this.value === quiz[currentQuestionIndex].correctAnswer) {
-// 		currentQuestionIndex++;
-// 		if (currentQuestionIndex < question.length) {
-// 			showNextQuestion();
-// 		}
-// 	} else {
-// 		timerCount -= 10;
-// 	}
-// }
-
-// These functions are used by init
-// function getPoints() {
-//     // Get stored value from client storage, if it exists
-//     var storedPoints = localStorage.getItem("winCount");
-//     // If stored value doesn't exist, set counter to 0
-//     if (storedWins === null) {
-//         winCounter = 0;
-//     } else {
-//         // If a value is retrieved from client storage set the winCounter to that value
-//         winCounter = storedWins;
-//     }
-//     //Render win count to page
-//     win.textContent = winCounter;
-// }
 
 // Calls init() so that it fires when page opened
 init();
