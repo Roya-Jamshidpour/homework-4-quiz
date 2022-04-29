@@ -7,6 +7,7 @@
   color: black;
   margin: 20px 20px;
 }
+
 /* header with timer and link to High Scores */
 .header-text {
   display: flex;
@@ -14,7 +15,15 @@
   color: black;
   font-size: 1em;
   text-align: center;
- 
+ }
+
+/* link to high scores page */
+.high-score-link {
+  color: black;
+  border-style: solid;
+  border-radius: 5px;
+ padding: 5px 5px;
+  border-color: rgb(99, 175, 131);
 }
 
 /* title of game */
@@ -23,6 +32,7 @@
   text-align:center;
   padding-bottom: 20px;
 }
+
 /* text for description of game */
 .intro-text {
   display: flex;
@@ -50,11 +60,13 @@ button {
 button:hover {
   background-color: rgb(99, 175, 131);
 }
+
 /* styles for start button */
 .big-button {
   display: flex;
   justify-content: center;
 }
+
 /* styles for header */
 .header-text {
   display: flex;
@@ -64,12 +76,10 @@ button:hover {
   text-align: center;
 }
 
-
 /* styles for container answer option buttons are in */
 .question-container {
   display: flex;
   justify-content: center;
-  
 }
 
 .button-grid {
@@ -84,7 +94,6 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 /* hides buttons with this class */
