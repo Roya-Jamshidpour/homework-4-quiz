@@ -1,10 +1,11 @@
-let bigButton = document.querySelector('big-button')
+let playAgainButton = document.getElementById('big-button');
 
-bigButton.addEventListener('click', playQuizAgain)
+playAgainButton.addEventListener('click', playAgain)
 
-
-
-
-function playQuizAgain () {
-    window.location = "file:///Users/roya_jamshidpour/Desktop/BOOTCAMP/homework/homework-4-quiz/HighScoresPage.html"
+function playAgain() {
+    window.location.href = "/index.html";
 }
+
+
+
+

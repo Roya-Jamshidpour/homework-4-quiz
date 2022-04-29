@@ -146,7 +146,7 @@ function storeHighScore(event) {
     localStorage.setItem("highScore", JSON.stringify(highScore));
 
     console.log(highScore)
-    window.location = "file:///Users/roya_jamshidpour/Desktop/BOOTCAMP/homework/homework-4-quiz/HighScoresPage.html"
+    window.location.href= "./HighScoresPage.html";
     // go to High Scores page
 
 }
