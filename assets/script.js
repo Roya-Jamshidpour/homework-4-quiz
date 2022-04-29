@@ -142,9 +142,13 @@ function storeHighScore(event) {
 		name: initials,
 		score: timerCount,
 	};
-    console.log(highScore)
-    localStorage.setItem(highScore, JSON.stringify);
     
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+
+    console.log(highScore)
+    window.location = "file:///Users/roya_jamshidpour/Desktop/BOOTCAMP/homework/homework-4-quiz/HighScoresPage.html"
+    // go to High Scores page
+
 }
 
 // Calls init() so that it fires when page opened

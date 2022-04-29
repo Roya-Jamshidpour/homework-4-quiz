@@ -1,0 +1,57 @@
+* {
+  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: none;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    margin: 20px 20px;
+  }
+  
+  /* title of game */
+  .large-font {
+   margin-top: 50px;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* styles for button */
+  .big-button {
+    background: rgb(162, 209, 182);
+    border-radius: 8px;
+    color: #13293d;
+    cursor: pointer;
+    font-size: 1em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 0.6em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  button:hover {
+    background-color: rgb(99, 175, 131);
+  }
+  
+  /* styles for container answer option buttons are in */
+  .button-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  /* at end of game input area to save High Score */
+  .initials-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
