@@ -82,7 +82,8 @@ function startTimer() {
       timerCount--;
       timerElement.textContent = timerCount;
     //   when list of questions is thru game ends
-    if (timerCount <= 0 || currentQuestionIndex >= quiz.length) {
+    if (timerCount <= 0 && currentQuestionIndex >= quiz.length) {
+        clearInterval(timer)
       endGame();
     //   when timer count reaches 0 game ends
       if (timerCount <= 0) 
@@ -126,7 +127,7 @@ function answer_question() {
 function endGame(timerCount) {
     console.log("end")
     questionContainerElement.classList.add('hide');
-    document.getElementById('question_text').innerHTML = ["Enter your initials and save your score!"];
+    document.getElementById('question_text').innerHTML = "Enter your initials and save your score!";
 
 
 
