@@ -86,6 +86,14 @@ button:hover {
 .question-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  
+}
+
+.question_text {
+  display: flex;
+  justify-content: center;
+  
 }
 
 .button-grid {

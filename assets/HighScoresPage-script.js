@@ -14,7 +14,7 @@ function init() {
 function displayNewHighScore() {
     var lastScore = JSON.parse(localStorage.getItem('newScore'));
      document.getElementById("saved-name").textContent = "Name: " + lastScore[0].name;
-     document.getElementById("saved-score").textContent = "Score: " + lastScore[1];
+     document.getElementById("saved-score").textContent = "Score: " + lastScore[1].score;
 
 }
 

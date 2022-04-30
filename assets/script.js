@@ -22,27 +22,27 @@ currentQuestionIndex = 0
 let quiz = [
 
     {
-        question: 'What is 2 + 2?',
-        choices: ['5', '4', '6', '3'],
-        answer: '4'
+        question: 'In Chicago during the 1920s and 1930s, this tenor saxophone playr, bandleader, and arranger was hugely popular! Who was he?',
+        choices: ['Charley Straight', 'Isham Jones', 'King Oliver', 'Russ Columbo'],
+        answer: 'Isham Jones'
     },
 
     {
-        question: 'What is 1+1?',
-        choices: ['2', '3', '6', '4'],
-        answer: '2'
+        question: 'This trumpet player was truly a king! *hint* *hint* He taught the legendary Louis Armstrong how to play and was a pioneer of jazz, popularizing the music during the Jazz Age.',
+        choices: ['Joseph "King" Oliver', 'Fess Williams', 'Benny Goodman', 'Kid Ory'],
+        answer: 'Joseph "King" Oliver'
     },
 
     {
-        question: 'What is 5+5?',
-        choices: ['3', '12', '13', '10'],
-        answer: '10'
+        question: 'Men were not the only ones to perform jazz in the 1920s and 30s! This black woman was an incredible pianist, composer, and songwriter of the time. She was integral in shaping what jazz music is and was.',
+        choices: ['Clara Smith', 'Victoria Spivey', 'Ethel Waters', 'Mary Lou Williams'],
+        answer: 'Mary Lou Williams'
     },
 
     {
-        question: 'What is 20 x 2?',
-        choices: ['30', '50', '40', '60'],
-        answer: '40'
+        question: 'This baritone singer was the Romeo of Songs! He was a popular radio star, a true heartthrob, who made his start as a violinist. Know who he is? ',
+        choices: ['Bing Crosby', 'Artie Shaw', 'Russ Columbo', 'Luis Russell'],
+        answer: 'Russ Columbo'
     }
 ]
 
@@ -145,7 +145,6 @@ function storeHighScore(event) {
     
     highScoresArray.push(highScore)
     localStorage.setItem('newScore', JSON.stringify(highScoresArray));
-    console.log(highScoresArray)
     goToHighScoresPage()
 
     
