@@ -9,11 +9,14 @@ playAgainButton.addEventListener('click', playAgain)
 function init() {
     displayNewHighScore()
 }
+ var lastScore = JSON.parse(localStorage.getItem('newScore'));
 
 // renders new score with initials on page
 function displayNewHighScore() {
-    var lastScore = JSON.parse(localStorage.getItem('newScore'));
+   
+
      document.getElementById("saved-name").textContent = "Name: " + lastScore[0].name;
+    //  I cannot get score to render but it is stored locally 
      document.getElementById("saved-score").textContent = "Score: " + lastScore[1].score;
 
 }

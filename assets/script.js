@@ -22,7 +22,7 @@ currentQuestionIndex = 0
 let quiz = [
 
     {
-        question: 'In Chicago during the 1920s and 1930s, this tenor saxophone playr, bandleader, and arranger was hugely popular! Who was he?',
+        question: 'In Chicago during the 1920s and 1930s, this tenor saxophone player, bandleader, and arranger was hugely popular! Who was he?',
         choices: ['Charley Straight', 'Isham Jones', 'King Oliver', 'Russ Columbo'],
         answer: 'Isham Jones'
     },

@@ -56,9 +56,8 @@ button {
   padding: 20px 70px;
   text-align: center;
   transition-duration: 0.15s;
-  transition-property: background-color;
   transition-timing-function: linear;
-  margin-top: 0.6em;
+ 
 }
 
 button:hover {
