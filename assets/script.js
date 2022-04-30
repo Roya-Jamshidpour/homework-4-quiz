@@ -11,7 +11,7 @@ let submitButton = document.getElementById('submit-button');
 startButton.addEventListener('click', startGame);
 submitButton.addEventListener('click', storeHighScore);
 
-
+let highScoresArray = JSON.parse(localStorage.getItem('highScoresArray')) || [];
 
 let timer;
 let timerCount = 60;
@@ -143,14 +143,20 @@ function storeHighScore(event) {
 		score: timerCount,
 	};
     
-    window.localStorage.setItem('newScore', JSON.stringify(highScore));
+    highScoresArray.push(highScore)
+    localStorage.setItem('newScore', JSON.stringify(highScoresArray));
+    console.log(highScoresArray)
+    goToHighScoresPage()
 
-    console.log(highScore)
+    
      // go to High Scores page
+     function goToHighScoresPage() {
    window.location.href= "./HighScoresPage.html";
    
 
 }
+}
+
 
 // so init function fires when page opens
 init()

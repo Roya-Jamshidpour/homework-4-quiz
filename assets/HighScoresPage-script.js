@@ -1,24 +1,27 @@
 let playAgainButton = document.getElementById('big-button');
-
+// when button is clicked back to startiing page
+playAgainButton.addEventListener('click', playAgain)
+var lastScore = localStorage.getItem("highScore");
 
 function init() {
     displayNewHighScore()
 }
 
 function displayNewHighScore() {
-    let lastScore = JSON.parse(localStorage.getItem('highScore'));
+    console.log(lastScore)
+    
+
+    
+//     document.getElementById("saved-name").innerHTML = lastScore;
+//   document.getElementById("saved-score").innerHTML = score;
 
 }
 
-
-playAgainButton.addEventListener('click', playAgain)
-
+// function to go back to start page
 function playAgain() {
     window.location.href = "./index.html";
 }
 
 
-let highScores = document.getElementById('high-scores-list');
-let highScoresArray = JSON.parse(localStorage.getItem('newScore')) || [];
 
 
