@@ -37,6 +37,10 @@
 .intro-text {
   display: flex;
   justify-content: center;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 1.45em;
 }
 
 /* styles for button */

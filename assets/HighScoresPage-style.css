@@ -25,17 +25,10 @@
     align-items: center;
   }
   /* styles for high-scores boc */
-  .high-scores-list {
-    height: 300px;
-    width: 200px;
-    margin-top: 20px;;
-    padding: 20px;
-    border-style: solid;
-    border-color: black;
+  .high-scores-list p {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    color: rgb(99, 175, 131);
     
   }
   /* styles for button */
