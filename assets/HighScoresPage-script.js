@@ -6,7 +6,8 @@ function init() {
 }
 
 function displayNewHighScore() {
-    window.localStorage.getItem('newScore');
+    let lastScore = JSON.parse(localStorage.getItem('highScore'));
+
 }
 
 
@@ -17,5 +18,7 @@ function playAgain() {
 }
 
 
+let highScores = document.getElementById('high-scores-list');
+let highScoresArray = JSON.parse(localStorage.getItem('newScore')) || [];
 
 

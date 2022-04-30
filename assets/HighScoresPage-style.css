@@ -29,10 +29,14 @@
     height: 300px;
     width: 200px;
     margin-top: 20px;;
+    padding: 20px;
     border-style: solid;
     border-color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
   }
   /* styles for button */
   .big-button {
@@ -61,7 +65,7 @@
   /* styles for container answer option buttons are in */
   .button-container {
     margin-top: 50px;
-    margin-left: 800px;
+    margin-left: 547px;
     display: inline-block;
     align-items: center;
     
