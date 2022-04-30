@@ -1,19 +1,20 @@
 let playAgainButton = document.getElementById('big-button');
+
 // when button is clicked back to startiing page
 playAgainButton.addEventListener('click', playAgain)
-var lastScore = localStorage.getItem("highScore");
+
+// gets name and score from local storage
+
 
 function init() {
     displayNewHighScore()
 }
 
+// renders new score with initials on page
 function displayNewHighScore() {
-    console.log(lastScore)
-    
-
-    
-//     document.getElementById("saved-name").innerHTML = lastScore;
-//   document.getElementById("saved-score").innerHTML = score;
+    var lastScore = JSON.parse(localStorage.getItem('newScore'));
+    document.getElementById("saved-name").innerHTML = lastScore.name;
+    document.getElementById("saved-score").innerHTML = lastScore.score;
 
 }
 
