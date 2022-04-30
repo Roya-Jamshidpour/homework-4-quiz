@@ -1,6 +1,6 @@
 # homework-4-quiz
-# homework-3
-# Password Generator homework
+
+# Timed Quiz Homework
 
 <img src="https://res.cloudinary.com/dcm18vy74/image/upload/v1651359914/Homework-3-quiz/Screen_Shot_2022-04-30_at_6.04.46_PM_w9apld.png">
 
