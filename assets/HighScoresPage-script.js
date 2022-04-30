@@ -13,8 +13,8 @@ function init() {
 // renders new score with initials on page
 function displayNewHighScore() {
     var lastScore = JSON.parse(localStorage.getItem('newScore'));
-     document.getElementById("saved-name").innerHTML = "Name: " + lastScore[0].name;
-     document.getElementById("saved-score").innerHTML = "Score: " + lastScore[1].score;
+     document.getElementById("saved-name").textContent = "Name: " + lastScore[0].name;
+     document.getElementById("saved-score").textContent = "Score: " + lastScore[1];
 
 }
 
