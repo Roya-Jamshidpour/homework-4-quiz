@@ -9,5 +9,5 @@ This is a quiz designed to test your knowledge of jazz music from the 1920s and 
 
 
 ### Here is a link to take the quiz!
-<a href="https://roya-jamshidpour.github.io/homework-4-quiz/">https://roya-jamshidpour.github.io/homework-4-quiz/
+<a href="https://roya-jamshidpour.github.io/jazz-quiz/">https://roya-jamshidpour.github.io/jazz-quiz/
 
