@@ -6,24 +6,26 @@
   text-decoration: none;
   color: black;
   margin: 20px 20px;
+  background-color: rgb(203, 238, 218);
 }
 
 /* header with timer and link to High Scores */
 .header-text {
   display: flex;
   justify-content: space-between;
-  color: black;
+  color: white;
   font-size: 1em;
   text-align: center;
  }
 
 /* link to high scores page */
 .high-score-link {
-  color: black;
+  color: white;
   border-style: solid;
   border-radius: 5px;
  padding: 5px 5px;
-  border-color: rgb(99, 175, 131);
+  border-color: black;
+  background-color: rgb(58, 13, 191);
 }
 
 /* title of game */
@@ -31,6 +33,7 @@
   font-size: 3em;
   text-align:center;
   padding-bottom: 20px;
+  color: rgb(21, 4, 72);
 }
 
 /* text for description of game */
@@ -45,9 +48,9 @@
 
 /* styles for button */
 button {
-  background: rgb(162, 209, 182);
+  background: rgb(21, 4, 72);
   border-radius: 8px;
-  color: #13293d;
+  color: white;
   cursor: pointer;
   font-size: 1em;
   letter-spacing: 0.2px;
@@ -61,7 +64,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(99, 175, 131);
+  background-color: rgb(42, 7, 146);
 }
 
 /* styles for start button */
